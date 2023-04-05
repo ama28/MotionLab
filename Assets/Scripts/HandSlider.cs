@@ -43,7 +43,7 @@ public class HandSlider : MonoBehaviour
             }
         }
         if (sliderMove) {
-            float sliderDisplacement = (startingY - transform.parent.transform.position.y)/0.2f;
+            float sliderDisplacement = (startingY - transform.parent.transform.position.y)/0.15f;
             //Debug.Log(startingY);
             //Debug.Log(transform.parent.transform.position.y);
             mySlider.value = 1 - sliderDisplacement;

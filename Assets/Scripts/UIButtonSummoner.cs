@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIButtonSummoner : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class UIButtonSummoner : MonoBehaviour
     void Update()
     {
         leftHandRotation = transform.parent.transform.rotation.z;
-        Debug.Log(transform.parent.transform.rotation.z);
+        //Debug.Log(transform.parent.transform.rotation.z);
         if (leftHandRotation >= 0.6 && leftHandRotation <= 1){
             if (uiOut) return;
             uiOut = true;
@@ -36,6 +37,12 @@ public class UIButtonSummoner : MonoBehaviour
             for (int i = 0; i < children.Length; i++) {
                 children[i].SetBool("Out", false);     
             }
+        }
+    }
+
+    public void ResetGame() {
+        if (uiOut) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
