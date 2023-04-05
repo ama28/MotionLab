@@ -13,6 +13,8 @@ public class HandSlider : MonoBehaviour
     public Color MaxHealthColor = Color.green;
     public Color MinHealthColor = Color.red;
     public TMP_Text plungerText;
+    public GameObject leftHand;
+    private bool bounce;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class HandSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mySlider.value > 0.45 && mySlider.value < 0.6) {
+        if (mySlider.value < 0.7 && mySlider.value >= 0.55) {
             plungerText.text = "First Stop Reached";
         }
         else if (mySlider.value >= 0 && mySlider.value < 0.2) {
@@ -38,15 +40,26 @@ public class HandSlider : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)){
             sliderMove = !sliderMove;
             if (sliderMove) {
-                startingY = transform.parent.transform.position.y;
+                startingY = leftHand.transform.position.y;
                 mySlider.GetComponent<CanvasGroup>().alpha = 1;
             }
         }
         if (sliderMove) {
-            float sliderDisplacement = (startingY - transform.parent.transform.position.y)/0.15f;
+            float sliderDisplacement = (startingY - leftHand.transform.position.y)/0.15f;
             //Debug.Log(startingY);
             //Debug.Log(transform.parent.transform.position.y);
-            mySlider.value = 1 - sliderDisplacement;
+            float tempDisplacement = 1 - sliderDisplacement;
+            if (tempDisplacement >= 0.7f) {
+                mySlider.value = tempDisplacement;
+            }
+            else if (tempDisplacement > 0.25f && tempDisplacement < 0.7f) {
+                mySlider.value = 0.7f - (0.7f - tempDisplacement) * 0.1f;
+            }
+            else if (tempDisplacement <= 0.25f) {
+                mySlider.value = 0.65f - (0.65f - (tempDisplacement + 0.4f)) * 0.5f;
+            }
+            
+            //mySlider.value = 1 - sliderDisplacement + 0.15;
             Fill.color = Color.Lerp(MinHealthColor, MaxHealthColor, mySlider.value);
             //Debug.Log(mySlider.value);
         }
