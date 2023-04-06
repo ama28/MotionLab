@@ -10,6 +10,7 @@ public class HandSlider : MonoBehaviour
     public float startingY;
     public bool sliderMove;
     public Image Fill;
+    public Image Background;
     public Color MaxHealthColor = Color.green;
     public Color MinHealthColor = Color.red;
     public TMP_Text plungerText;
