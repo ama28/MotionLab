@@ -11,7 +11,7 @@ public class PlungerVolume : MonoBehaviour
     public float botVol;
     public TMP_Text volumeText;
     private int counter;
-    private int scrollSpeed;
+    [SerializeField] private int scrollSpeed = 15;
     private float lowerLimit;
     private float upperLimit;
     private float numTime;
@@ -23,7 +23,6 @@ public class PlungerVolume : MonoBehaviour
     {
         volume = 20f;
         counter = 0;
-        scrollSpeed = 15;
         lowerLimit = 20;
         upperLimit = 200;
         topVol = 0;
