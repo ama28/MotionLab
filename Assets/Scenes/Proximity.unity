@@ -3096,6 +3096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: micropipette_untextured (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c44a4db86f1990d479559d878daea20e, type: 3}
+      propertyPath: m_TagString
+      value: Pipette
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c44a4db86f1990d479559d878daea20e, type: 3}
 --- !u!1 &1434331398 stripped
@@ -3993,6 +3997,7 @@ GameObject:
   - component: {fileID: 1667913852}
   - component: {fileID: 1667913851}
   - component: {fileID: 1667913850}
+  - component: {fileID: 1667913853}
   - component: {fileID: 1667913849}
   m_Layer: 0
   m_Name: Plane
@@ -4079,6 +4084,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667913853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667913848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9812f188fbe25499d0e8955d00cee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1695393627
 PrefabInstance:
   m_ObjectHideFlags: 0

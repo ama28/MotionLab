@@ -38,13 +38,13 @@ public class HandSlider : MonoBehaviour
         else {
             plungerText.text = "";
         }
-        if (Input.GetKeyDown(KeyCode.P)){
-            sliderMove = !sliderMove;
-            if (sliderMove) {
-                startingY = leftHand.transform.position.y;
-                mySlider.GetComponent<CanvasGroup>().alpha = 1;
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.P)){
+        //     sliderMove = !sliderMove;
+        //     if (sliderMove) {
+        //         startingY = leftHand.transform.position.y;
+        //         mySlider.GetComponent<CanvasGroup>().alpha = 1;
+        //     }
+        // }
         if (sliderMove) {
             float sliderDisplacement = (startingY - leftHand.transform.position.y)/0.15f;
             //Debug.Log(startingY);

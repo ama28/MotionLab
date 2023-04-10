@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class TriggerBox : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private HandSlider slider;
+
     void Start()
     {
-        
+        slider = FindObjectOfType<HandSlider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Pipette"))
+        {
+            slider.sliderMove = true;
+            slider.startingY = slider.leftHand.transform.position.y;
+            slider.mySlider.GetComponent<CanvasGroup>().alpha = 1;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Pipette"))
+            slider.sliderMove = false;
     }
 }
