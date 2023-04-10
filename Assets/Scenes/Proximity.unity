@@ -3264,6 +3264,18 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &1434331405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434331398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2433acc5e69304f9b6989ae037bafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1460182484
 GameObject:
   m_ObjectHideFlags: 0
