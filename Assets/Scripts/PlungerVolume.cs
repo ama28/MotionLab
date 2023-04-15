@@ -21,20 +21,20 @@ public class PlungerVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        volume = 20f;
+        /* volume = 20f;
         counter = 0;
         lowerLimit = 20;
         upperLimit = 200;
         topVol = 0;
         midVol = 2;
         botVol = 0;
-        volumeText.text = volume.ToString();
+        volumeText.text = volume.ToString(); */
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow)){
+        /* if (Input.GetKey(KeyCode.RightArrow)){
             if (!(volume == upperLimit && counter == 0)){
                 if (counter < scrollSpeed) {
                     counter++;
@@ -86,6 +86,6 @@ public class PlungerVolume : MonoBehaviour
         midScroll.GetComponent<Animator>().SetFloat("NumTime", numTime);
         numTime = (botVol/10) + (((float)counter)/(scrollSpeed*10))-0.03f;
         botScroll.GetComponent<Animator>().SetFloat("NumTime", numTime);
-        volumeText.text = volume.ToString();
+        volumeText.text = volume.ToString(); */
     }
 }

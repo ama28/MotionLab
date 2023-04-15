@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject trackerCanvas;
+    public GameObject line;
+    private bool canvasShowing;
     // Update is called once per frame
     void Update()
     {
@@ -12,5 +15,11 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (Input.GetKeyDown(KeyCode.T)) {
+             canvasShowing = !canvasShowing;
+             trackerCanvas.SetActive(canvasShowing);
+             line.SetActive(canvasShowing);
+         }
     }
 }
