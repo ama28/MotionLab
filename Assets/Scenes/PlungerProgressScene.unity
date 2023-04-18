@@ -1794,9 +1794,11 @@ MonoBehaviour:
   startingY: 0
   sliderMove: 0
   Fill: {fileID: 1155297179}
+  Background: {fileID: 0}
   MaxHealthColor: {r: 0, g: 1, b: 0, a: 1}
   MinHealthColor: {r: 1, g: 0, b: 0, a: 1}
   plungerText: {fileID: 1500005222}
+  leftHand: {fileID: 0}
 --- !u!1001 &2032886872
 PrefabInstance:
   m_ObjectHideFlags: 0
