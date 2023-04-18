@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TriggerBox : MonoBehaviour
+public class TriggerTubeBox : MonoBehaviour
 {
     private HandSlider slider;
     public GameManager manager;
@@ -17,19 +17,18 @@ public class TriggerBox : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pipette") && manager.step == 6)
+        if (other.CompareTag("Pipette") && manager.step == 3)
         {
             slider.sliderMove = true;
             slider.startingY = slider.leftHand.transform.position.y;
             slider.mySlider.GetComponent<CanvasGroup>().alpha = 1;
             manager.step++;
-            uiText.text = "Release the liquid by pushing to the second stop";
+            uiText.text = "Now prepare to draw up liquid by pushing the plunger to the first stop.";
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-
             
     }
 }

@@ -28,8 +28,11 @@ public class HandSlider : MonoBehaviour
     public GameObject topScroll;
     public GameObject midScroll;
     public GameObject botScroll;
-    public int counter;
+    private int counter;
+    private int firstStopCounter;
+    private int secondStopCounter;
     public int goal;
+    public GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,21 +48,57 @@ public class HandSlider : MonoBehaviour
         topVol = 0;
         midVol = 2;
         botVol = 0;
-        volumeText.text = volume.ToString();
         counter = 0;
+        firstStopCounter = 0;
+        secondStopCounter = 0;
         goal = 36;
+        manager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (mySlider.value == 1 && manager.step == 5) {
+            manager.step++;
+            mySlider.GetComponent<CanvasGroup>().alpha = 0;
+            volumeText.text = "You've drawn up the liquid. Now bring the pipette over the paper to release the liquid";
+        }
         if (mySlider.value < 0.7 && mySlider.value >= 0.55) {
+            secondStopCounter = 0;
+            if (manager.step == 4){
+                if (firstStopCounter == 100) {
+                    manager.step++;
+                    volumeText.text = "You've pushed to the first stop. You're ready to draw up liquid. Tap the pipette to the tube box and bring the plunger up";
+                }
+                else {
+                    firstStopCounter++;
+                }
+            }
+            else {
+                firstStopCounter = 0;
+            }
             plungerText.text = "First Stop Reached";
         }
         else if (mySlider.value >= 0 && mySlider.value < 0.2) {
+            firstStopCounter = 0;
+            if (manager.step == 7){
+                if (secondStopCounter == 100) {
+                    manager.step++;
+                    mySlider.GetComponent<CanvasGroup>().alpha = 0;
+                    volumeText.text = "You've successfully released the liquid";
+                }
+                else {
+                    secondStopCounter++;
+                }
+            }
+            else {
+                secondStopCounter = 0;
+            }
             plungerText.text = "Second Stop Reached";
         }
         else {
+            secondStopCounter = 0;
+            firstStopCounter = 0;
             plungerText.text = "";
         }
         if (Input.GetKeyDown(KeyCode.P)){
@@ -88,12 +127,7 @@ public class HandSlider : MonoBehaviour
             Fill.color = Color.Lerp(MinHealthColor, MaxHealthColor, mySlider.value);
             //Debug.Log(mySlider.value);
         }
-        else {
-            mySlider.value = 1;
-            Fill.color = Color.Lerp(MinHealthColor, MaxHealthColor, 1);
-            plungerText.text = "";
-            mySlider.GetComponent<CanvasGroup>().alpha = 0;
-        }
+
 
         if (Input.GetKeyDown(KeyCode.V)){
             volMove = !volMove;
@@ -116,6 +150,7 @@ public class HandSlider : MonoBehaviour
             if (volume == goal) {
                 if (counter == 100) {
                     Debug.Log("Correct!");
+                    manager.step++;
                     volMove= !volMove;
                     volSlider.value = 1;
                     volSlider.GetComponent<CanvasGroup>().alpha = 0;
@@ -123,8 +158,8 @@ public class HandSlider : MonoBehaviour
                     topVol = 0;
                     midVol = 2;
                     botVol = 0;
-                    volumeText.text = volume.ToString();
                     counter = 0;
+                    volumeText.text = "You've set the correct volume. Now bring the pipette over the tube box.";
                 }
                 else {
                     counter++;
@@ -134,7 +169,7 @@ public class HandSlider : MonoBehaviour
                 counter = 0;
             }
             
-            float dec = (float)((((int)((volDisplacement * 30) * 100))%100))/100;
+            float dec = (float)((((int)((volDisplacement * 0) * 100))%100))/100;
             topVol = (float)(volume/100);
             midVol = (float)((volume/10)%10);
             botVol = (float)(volume%10);
@@ -155,7 +190,6 @@ public class HandSlider : MonoBehaviour
             numTime = (botVol/10) + (dec/10);
             botScroll.GetComponent<Animator>().SetFloat("NumTime", numTime);
             //Debug.Log(volume);
-            volumeText.text = volume.ToString();
         }
         else {
             volSlider.value = 1;
@@ -164,7 +198,6 @@ public class HandSlider : MonoBehaviour
             topVol = 0;
             midVol = 2;
             botVol = 0;
-            volumeText.text = volume.ToString();
             counter = 0;
         }
         

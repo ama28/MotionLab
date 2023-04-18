@@ -29,6 +29,7 @@ public class PlungerVolume : MonoBehaviour
         midVol = 2;
         botVol = 0;
         volumeText.text = volume.ToString(); */
+        volumeText.text = "Welcome to MotionLab. Begin by grabbing the micropipette";
     }
 
     // Update is called once per frame
