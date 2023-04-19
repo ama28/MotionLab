@@ -9,20 +9,47 @@ public class TriggerDialogue : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
     [SerializeField] private AudioSource voiceOver;
-
+    [SerializeField] private TextAsset[] tasks;
+    public int currentTask;
+    [SerializeField] private Animator animator;
+    private DialogueManager dialogueManager;
+    private bool textTriggered;
     private void Start()
     {
-
+        textTriggered = false;
+        currentTask = 0;
+        dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
     }
     private void Update()
     {
         if (Input.GetKeyDown("space"))
         {
-            //inkJSON = Resources.Load("Resources/Instructions/Text/Tutorial") as TextAsset;
-            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            textTriggered = true;
+            
+           //inkJSON = Resources.Load("Resources/Instructions/Text/"+tasks[currentTask]) as TextAsset;
+            DialogueManager.GetInstance().EnterDialogueMode(tasks[currentTask]);
             //voiceOver.clip = Resources.Load("Resources/Instructions/Audio/Tutorial.mp3") as AudioClip;
+            voiceOver.clip = Resources.Load("Instructions/Audio/" + tasks[currentTask].name) as AudioClip;
+            print(tasks[currentTask].name);
             voiceOver.Play();
+            animator.SetBool("Open", true);
+            animator.SetBool("Close", false);
+            currentTask++;
         }
+        if (!voiceOver.isPlaying && textTriggered)
+        {
+            StartCoroutine(CloseText());
+        
+        }
+    }
+    IEnumerator CloseText()
+    {
+        yield return new WaitForSeconds(1f);
+        print("close");
+        animator.SetBool("Open", false);
+        animator.SetBool("Close", true);
+        textTriggered = false;
+
     }
                
 }

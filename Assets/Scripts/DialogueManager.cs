@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine displayLineCoroutine;
     private bool canContinueToNextLine = false;
     public bool scrollingText;
-
+    public bool textEnd;
         
     // Singleton property
     public static DialogueManager Instance { get; private set; }
@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void Awake()
     {
+        textEnd = false;
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         
@@ -81,6 +82,7 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
+        textEnd = true;
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -98,15 +100,13 @@ public class DialogueManager : MonoBehaviour
         bool isAddingRichTextTag = false;
         if (scrollingText)
         {
-            print("go bb");
             //display each letter one at a time
             foreach (char letter in line.ToCharArray())
             {
-                print("let" + letter);
+               
                 //check for rich text taf
                 if (letter == '<' || isAddingRichTextTag)
                 {
-                    print("??");
                     isAddingRichTextTag = true;
                     dialogueText.text += letter;
                     if (letter == '>')
@@ -117,7 +117,6 @@ public class DialogueManager : MonoBehaviour
                 //no rich text tag display noraml letters
                 else
                 {
-                    print("go go ");
                     dialogueText.text += letter;
                     yield return new WaitForSeconds(typingSpeed);
                 }

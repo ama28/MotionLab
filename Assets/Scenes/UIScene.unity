@@ -1267,7 +1267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -580, y: 384}
   m_SizeDelta: {x: 700, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &796980415
@@ -2941,6 +2941,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: f96b0a4e346988c458e5e1ced5dcbf0b, type: 3}
   voiceOver: {fileID: 309701197}
+  tasks:
+  - {fileID: 4900000, guid: f96b0a4e346988c458e5e1ced5dcbf0b, type: 3}
+  - {fileID: 4900000, guid: bb330d7c899cded4592ff1ba1af5c9d1, type: 3}
+  currentTask: 0
 --- !u!1 &2012183953
 GameObject:
   m_ObjectHideFlags: 0
