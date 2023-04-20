@@ -1,1 +1,0 @@
-Welcome to MotionLab. Today, you will learn how to select and use micropipettes with the correct technique. Micropipettes measure volumes in small amounts called microliters (µl). Microliters are one millionth of a liter. They are essential for molecular biology techniques, including DNA extraction and pipetting cells. We will guide you through a step-by-step exercise. 

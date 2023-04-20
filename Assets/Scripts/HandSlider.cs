@@ -58,14 +58,14 @@ public class HandSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mySlider.value == 1 && manager.step == 5) {
+        if (mySlider.value == 1 && manager.step == 21) {
             manager.step++;
             mySlider.GetComponent<CanvasGroup>().alpha = 0;
             volumeText.text = "You've drawn up the liquid. Now bring the pipette over the paper to release the liquid";
         }
         if (mySlider.value < 0.7 && mySlider.value >= 0.55) {
             secondStopCounter = 0;
-            if (manager.step == 4){
+            if (manager.step == 17){
                 if (firstStopCounter == 100) {
                     manager.step++;
                     volumeText.text = "You've pushed to the first stop. You're ready to draw up liquid. Tap the pipette to the tube box and bring the plunger up";
@@ -81,7 +81,7 @@ public class HandSlider : MonoBehaviour
         }
         else if (mySlider.value >= 0 && mySlider.value < 0.2) {
             firstStopCounter = 0;
-            if (manager.step == 7){
+            if (manager.step == 25){
                 if (secondStopCounter == 100) {
                     manager.step++;
                     mySlider.GetComponent<CanvasGroup>().alpha = 0;
@@ -149,6 +149,7 @@ public class HandSlider : MonoBehaviour
             volume = 20 + (int)(volDisplacement * 30);
             if (volume == goal) {
                 if (counter == 100) {
+                    Debug.Log(manager.step);
                     Debug.Log("Correct!");
                     manager.step++;
                     volMove= !volMove;

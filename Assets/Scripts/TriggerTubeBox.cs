@@ -17,7 +17,7 @@ public class TriggerTubeBox : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pipette") && manager.step == 3)
+        if (other.CompareTag("Pipette") && manager.step == 16)
         {
             slider.sliderMove = true;
             slider.startingY = slider.leftHand.transform.position.y;

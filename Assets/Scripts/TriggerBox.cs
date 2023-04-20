@@ -17,12 +17,11 @@ public class TriggerBox : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pipette") && manager.step == 6)
+        if (other.CompareTag("Pipette") && (manager.step >= 23 && manager.step <= 25))
         {
             slider.sliderMove = true;
             slider.startingY = slider.leftHand.transform.position.y;
             slider.mySlider.GetComponent<CanvasGroup>().alpha = 1;
-            manager.step++;
             uiText.text = "Release the liquid by pushing to the second stop";
         }
     }

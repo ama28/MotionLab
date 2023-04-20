@@ -1,0 +1,1 @@
+Place your hands about two inches above the sensor, with your palms facing down. Make sure that your virtual hands are correctly aligned to your real hands before continuing. 

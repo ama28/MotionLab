@@ -1,0 +1,1 @@
+Micropipettes draw in liquid by displacing a volume of air equal to the volume set by the numbers in the volume readout window. The plunger has two different positions. The first stop fills the tip, and the second stop dispenses the contents. 

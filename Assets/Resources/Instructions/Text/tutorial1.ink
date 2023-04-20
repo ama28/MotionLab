@@ -1,0 +1,1 @@
+First, we will learn about how to navigate MotionLab.

@@ -20,8 +20,8 @@ public class showZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(controller.isGrasped && manager.step == 0) {
-            manager.step = 1;
+        if(controller.isGrasped && manager.step == 10) {
+            manager.step = 11;
             uiText.text = "You've grabbed the pipette. Now set the volume to 36";
         }
     }

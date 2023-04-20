@@ -1,0 +1,1 @@
+Great! You have prepared the micropipette to draw up liquid. We can move on to the next step.

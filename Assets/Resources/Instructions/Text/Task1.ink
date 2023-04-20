@@ -1,1 +1,0 @@
-To see the menu, open your left hand and rotate it so your palm is facing upwards. 🎉 [Fill in what menu does later - Viewing Modes, Home, Reset, Instructional Modes).You can interact with items in the lab by grabbing them. Try grabbing the highlighted pipette with your hand and moving it around. 🎉
