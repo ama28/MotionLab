@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI dialogueText2;
     [SerializeField] private GameObject continueIcon;
     private Story currentStory;
     public bool dialogueIsPlaying;
@@ -59,6 +60,7 @@ public class DialogueManager : MonoBehaviour
                     StopCoroutine(displayLineCoroutine);
                 }
                 dialogueText.text = currentStory.currentText;
+                dialogueText2.text = currentStory.currentText;
                 canContinueToNextLine = true;
                 continueIcon.SetActive(true);
             }
@@ -86,12 +88,14 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        dialogueText2.text = "";
     }
 
     private IEnumerator DisplayLine(string line)
     {
         //empty the curent dialogue text
         dialogueText.text = "";
+        dialogueText2.text = "";
 
         //Hide the continue button
         continueIcon.SetActive(false);
@@ -109,6 +113,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     isAddingRichTextTag = true;
                     dialogueText.text += letter;
+                    dialogueText2.text += letter;
                     if (letter == '>')
                     {
                         isAddingRichTextTag = false;
@@ -118,6 +123,7 @@ public class DialogueManager : MonoBehaviour
                 else
                 {
                     dialogueText.text += letter;
+                    dialogueText2.text += letter;
                     yield return new WaitForSeconds(typingSpeed);
                 }
             }
@@ -127,6 +133,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             dialogueText.text = currentStory.currentText;
+            dialogueText2.text = currentStory.currentText;
             canContinueToNextLine = true;
             continueIcon.SetActive(true);
         }
