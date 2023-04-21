@@ -18,6 +18,9 @@ public class PlungerVolume : MonoBehaviour
     public GameObject topScroll;
     public GameObject midScroll;
     public GameObject botScroll;
+    public GameObject liquidTube;
+    public GameObject liquidDrop;
+    public GameObject liquidPipette;
     // Start is called before the first frame update
     void Start()
     {
