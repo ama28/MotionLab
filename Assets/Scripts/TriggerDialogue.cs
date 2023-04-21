@@ -16,7 +16,8 @@ public class TriggerDialogue : MonoBehaviour
     private bool textTriggered;
     public GameManager manager;
     private Dictionary<int, int> stepToText = new Dictionary<int, int>();
-    private int counter;
+    private float counter;
+    [SerializeField] private float timeTillNextStep = 5f;
     private void Start()
     {
         textTriggered = false;
@@ -75,7 +76,7 @@ public class TriggerDialogue : MonoBehaviour
         if (textTriggered)
         {
             //StartCoroutine(CloseText());
-            if (counter == 500){
+            if (counter >= timeTillNextStep){
                 counter = 0;
                 textTriggered = false;
                 manager.step++;
@@ -84,7 +85,7 @@ public class TriggerDialogue : MonoBehaviour
                 Debug.Log(manager.step);
             }
             else {
-                counter++;
+                counter += Time.deltaTime;
             }
             
         

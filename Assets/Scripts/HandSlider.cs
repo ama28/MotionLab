@@ -28,10 +28,11 @@ public class HandSlider : MonoBehaviour
     public GameObject topScroll;
     public GameObject midScroll;
     public GameObject botScroll;
-    private int counter;
+    private float counter;
     private int firstStopCounter;
     private int secondStopCounter;
     public int goal;
+    public float timeAtGoal = 1f;
     public GameManager manager;
     // Start is called before the first frame update
     void Start()
@@ -148,7 +149,7 @@ public class HandSlider : MonoBehaviour
             //Debug.Log(mySlider.value);
             volume = 20 + (int)(volDisplacement * 30);
             if (volume == goal) {
-                if (counter == 100) {
+                if (counter >= timeAtGoal) {
                     Debug.Log(manager.step);
                     Debug.Log("Correct!");
                     manager.step++;
@@ -163,7 +164,7 @@ public class HandSlider : MonoBehaviour
                     volumeText.text = "You've set the correct volume. Now bring the pipette over the tube box.";
                 }
                 else {
-                    counter++;
+                    counter += Time.deltaTime;
                 }
             }
             else {

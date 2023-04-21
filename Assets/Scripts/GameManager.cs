@@ -15,8 +15,9 @@ public class GameManager : MonoBehaviour
     private bool canvasShowing;
     public int step;
     private HandSlider slider;
+    [SerializeField] private float timeTillNextStep = 5f;
     private InteractionBehaviour controller;
-    private int counter;
+    private float counter;
 
     void Start(){
         trackerCanvas.SetActive(false);
@@ -63,35 +64,35 @@ public class GameManager : MonoBehaviour
          }
          if (step == 1) {
             microDesc.SetActive(true);
-            if (counter == 500){
+            if (counter >= timeTillNextStep){
                 counter = 0;
                 step++;
                 microDesc.SetActive(false);
             }
             else {
-                counter++;
+                counter += Time.deltaTime;
             }
          }
          else if (step == 3) {
             leapDesc.SetActive(true);
-            if (counter == 500){
+            if (counter >= timeTillNextStep){
                 counter = 0;
                 step++;
                 leapDesc.SetActive(false);
             }
             else {
-                counter++;
+                counter += Time.deltaTime;
             }
          }
         else if (step == 7) {
             pipetteDesc.SetActive(true);
-            if (counter == 500){
+            if (counter >= timeTillNextStep){
                 counter = 0;
                 step++;
                 pipetteDesc.SetActive(false);
             }
             else {
-                counter++;
+                counter += Time.deltaTime;
             }
         }
     }
