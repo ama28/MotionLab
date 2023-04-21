@@ -66,16 +66,16 @@ public class TriggerDialogue : MonoBehaviour
             //inkJSON = Resources.Load("Resources/Instructions/Text/"+tasks[currentTask]) as TextAsset;
             DialogueManager.GetInstance().EnterDialogueMode(tasks[currentTask]);
             //voiceOver.clip = Resources.Load("Resources/Instructions/Audio/Tutorial.mp3") as AudioClip;
-            //voiceOver.clip = Resources.Load("Instructions/Audio/" + tasks[currentTask].name) as AudioClip;
+            voiceOver.clip = Resources.Load("Instructions/Audio/" + tasks[currentTask].name) as AudioClip;
             print(tasks[currentTask].name);
-            //voiceOver.Play();
+            voiceOver.Play();
             animator.SetBool("Open", true);
             animator.SetBool("Close", false);
         }
         if (textTriggered)
         {
-            //StartCoroutine(CloseText());
-            if (counter == 500){
+            StartCoroutine(CloseText());
+            /* if (counter == 500){
                 counter = 0;
                 textTriggered = false;
                 manager.step++;
@@ -85,19 +85,20 @@ public class TriggerDialogue : MonoBehaviour
             }
             else {
                 counter++;
-            }
+            }*/
             
         
         }
     }
     IEnumerator CloseText()
     {
-        yield return new WaitForSeconds(2f);
+        textTriggered = false;
+        manager.step++;
+        yield return new WaitForSeconds(voiceOver.clip.length);
         print("close");
         animator.SetBool("Open", false);
         animator.SetBool("Close", true);
-        textTriggered = false;
-        manager.step++;
+        
 
     }
                

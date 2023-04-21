@@ -3586,6 +3586,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: bb330d7c899cded4592ff1ba1af5c9d1, type: 3}
   currentTask: 0
   animator: {fileID: 796980417}
+  manager: {fileID: 0}
 --- !u!1001 &1960417859
 PrefabInstance:
   m_ObjectHideFlags: 0
