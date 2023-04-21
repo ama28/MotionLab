@@ -10,11 +10,18 @@ public class GameManager : MonoBehaviour
     private bool canvasShowing;
     public int step;
     private HandSlider slider;
+    public GameObject microDesc;
+    public GameObject leapDesc;
+    public GameObject pipetteDesc;
+    private int counter;
+    public float hold;
+
 
     void Start(){
         trackerCanvas.SetActive(false);
         line.SetActive(false);
         step = 0;
+        callNext();
         slider = FindObjectOfType<HandSlider>();
     }
 
@@ -38,10 +45,51 @@ public class GameManager : MonoBehaviour
             trackerCanvas.SetActive(true);
             line.SetActive(true);
             step++;
+
          }
          if (step > 2) {
             trackerCanvas.SetActive(false);
             line.SetActive(false);
          }
+        
+        if (step != 11 && step != 12)
+        {
+            trackerCanvas.SetActive(false);
+            line.SetActive(false);
+        }
+      
+    }
+    public void callNext()
+    {
+        switch (step)
+        {
+            case 1:
+                print("task" + step);
+
+                StartCoroutine(countTaskHold(hold, microDesc));
+                break;
+            case 3:
+                print("task" + step);
+                StartCoroutine(countTaskHold(hold, leapDesc));
+                break;
+            case 7:
+                print("task" + step);
+                StartCoroutine(countTaskHold(hold, pipetteDesc));
+                break;
+            default:
+                print("N/A for task "+ step);
+                break;
+        }
+
+    }
+    private IEnumerator countTaskHold(float hold, GameObject visuals)
+    {
+        print("start holdd" + step);
+        visuals.SetActive(true);
+        yield return new WaitForSeconds(5);
+        print("end holdd");
+        visuals.SetActive(false);
+        step++;
+        callNext();
     }
 }
