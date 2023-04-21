@@ -38,6 +38,9 @@ public class HandSlider : MonoBehaviour
     public GameObject circleBar;
     public bool firstClick;
     public bool secondClick;
+    public GameObject liquidTube;
+    public GameObject liquidPipette;
+    public GameObject liquidDrop;
     [SerializeField] private AudioSource voiceOver;
     // Start is called before the first frame update
     void Start()
@@ -70,6 +73,9 @@ public class HandSlider : MonoBehaviour
         if (mySlider.value == 1 && manager.step == 21) {
             manager.step++;
             mySlider.GetComponent<CanvasGroup>().alpha = 0;
+            liquidPipette.SetActive(true);
+            liquidTube.SetActive(false);
+
             volumeText.text = "You've drawn up the liquid. Now bring the pipette over the paper to release the liquid";
         }
         if (mySlider.value < 0.7 && mySlider.value >= 0.55) {
@@ -100,6 +106,8 @@ public class HandSlider : MonoBehaviour
                     manager.step++;
                     circleBar.SetActive(false);
                     mySlider.GetComponent<CanvasGroup>().alpha = 0;
+                    liquidPipette.SetActive(false);
+                    liquidDrop.SetActive(true);
                     volumeText.text = "You've successfully released the liquid";
                 }
                 else {
