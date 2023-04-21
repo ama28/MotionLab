@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Leap.Unity.Interaction;
 
 public class GameManager : MonoBehaviour
@@ -12,12 +13,16 @@ public class GameManager : MonoBehaviour
     public GameObject leapDesc;
     public GameObject pipetteDesc;
     public GameObject pipette;
+    public Slider progress;
     private bool canvasShowing;
     public int step;
     private HandSlider slider;
-    [SerializeField] private float timeTillNextStep = 5f;
+    [SerializeField] private float timeTillNextStep = 2f;
     private InteractionBehaviour controller;
     private float counter;
+    [SerializeField] private AudioSource voiceOver;
+    private bool microliterTriggered;
+    private bool leapTriggered;
 
     void Start(){
         trackerCanvas.SetActive(false);
@@ -28,12 +33,15 @@ public class GameManager : MonoBehaviour
         step = 0;
         slider = FindObjectOfType<HandSlider>();
         controller = pipette.GetComponent<InteractionBehaviour>();
-        counter = 0;
+        progress.value = 1;
+        microliterTriggered = false;
+        leapTriggered = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        progress.value = ((float)step)/25f;
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -64,25 +72,41 @@ public class GameManager : MonoBehaviour
          }
          if (step == 1) {
             microDesc.SetActive(true);
-            if (counter >= timeTillNextStep){
-                counter = 0;
-                step++;
-                microDesc.SetActive(false);
+            if(!microliterTriggered){
+                microliterTriggered = true;
+                voiceOver.clip = Resources.Load("Instructions/Audio/microliter") as AudioClip;
+                voiceOver.Play();
             }
-            else {
-                counter += Time.deltaTime;
+            if (!voiceOver.isPlaying) {
+                if (counter >= timeTillNextStep){
+                    counter = 0;
+                    step++;
+                    microDesc.SetActive(false);
+                }
+                else {
+                    counter += Time.deltaTime;
+                }
             }
+            
          }
          else if (step == 3) {
             leapDesc.SetActive(true);
-            if (counter >= timeTillNextStep){
-                counter = 0;
-                step++;
-                leapDesc.SetActive(false);
+            if(!leapTriggered){
+                leapTriggered = true;
+                voiceOver.clip = Resources.Load("Instructions/Audio/leap") as AudioClip;
+                voiceOver.Play();
             }
-            else {
-                counter += Time.deltaTime;
+            if (!voiceOver.isPlaying) {
+                if (counter >= timeTillNextStep){
+                    counter = 0;
+                    step++;
+                    leapDesc.SetActive(false);
+                }
+                else {
+                    counter += Time.deltaTime;
+                }
             }
+            
          }
         else if (step == 7) {
             pipetteDesc.SetActive(true);
@@ -92,7 +116,7 @@ public class GameManager : MonoBehaviour
                 pipetteDesc.SetActive(false);
             }
             else {
-                counter += Time.deltaTime;
+                    counter += Time.deltaTime;
             }
         }
     }

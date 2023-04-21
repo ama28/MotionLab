@@ -29,11 +29,16 @@ public class HandSlider : MonoBehaviour
     public GameObject midScroll;
     public GameObject botScroll;
     private float counter;
-    private int firstStopCounter;
-    private int secondStopCounter;
+    private float firstStopCounter;
+    private float secondStopCounter;
     public int goal;
-    public float timeAtGoal = 1f;
+    public float timeAtGoal = 3f;
     public GameManager manager;
+    public Image loadingBar;
+    public GameObject circleBar;
+    public bool firstClick;
+    public bool secondClick;
+    [SerializeField] private AudioSource voiceOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +59,9 @@ public class HandSlider : MonoBehaviour
         secondStopCounter = 0;
         goal = 36;
         manager = FindObjectOfType<GameManager>();
+        circleBar.SetActive(false);
+        firstClick = false;
+        secondClick = false;
     }
 
     // Update is called once per frame
@@ -67,33 +75,41 @@ public class HandSlider : MonoBehaviour
         if (mySlider.value < 0.7 && mySlider.value >= 0.55) {
             secondStopCounter = 0;
             if (manager.step == 17){
-                if (firstStopCounter == 100) {
+                circleBar.SetActive(true);
+                if (firstStopCounter >= timeAtGoal) {
                     manager.step++;
+                    circleBar.SetActive(false);
                     volumeText.text = "You've pushed to the first stop. You're ready to draw up liquid. Tap the pipette to the tube box and bring the plunger up";
                 }
                 else {
-                    firstStopCounter++;
+                    firstStopCounter += Time.deltaTime;
                 }
+                loadingBar.fillAmount = firstStopCounter/timeAtGoal;
             }
             else {
                 firstStopCounter = 0;
+                circleBar.SetActive(false);
             }
             plungerText.text = "First Stop Reached";
         }
         else if (mySlider.value >= 0 && mySlider.value < 0.2) {
             firstStopCounter = 0;
             if (manager.step == 25){
-                if (secondStopCounter == 100) {
+                circleBar.SetActive(true);
+                if (secondStopCounter >= timeAtGoal) {
                     manager.step++;
+                    circleBar.SetActive(false);
                     mySlider.GetComponent<CanvasGroup>().alpha = 0;
                     volumeText.text = "You've successfully released the liquid";
                 }
                 else {
-                    secondStopCounter++;
+                    secondStopCounter += Time.deltaTime;
                 }
+                loadingBar.fillAmount = secondStopCounter/timeAtGoal;
             }
             else {
                 secondStopCounter = 0;
+                circleBar.SetActive(false);
             }
             plungerText.text = "Second Stop Reached";
         }
@@ -101,6 +117,7 @@ public class HandSlider : MonoBehaviour
             secondStopCounter = 0;
             firstStopCounter = 0;
             plungerText.text = "";
+            circleBar.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.P)){
             sliderMove = !sliderMove;
@@ -149,10 +166,12 @@ public class HandSlider : MonoBehaviour
             //Debug.Log(mySlider.value);
             volume = 20 + (int)(volDisplacement * 30);
             if (volume == goal) {
+                circleBar.SetActive(true);
                 if (counter >= timeAtGoal) {
                     Debug.Log(manager.step);
                     Debug.Log("Correct!");
                     manager.step++;
+                    circleBar.SetActive(false);
                     volMove= !volMove;
                     volSlider.value = 1;
                     volSlider.GetComponent<CanvasGroup>().alpha = 0;
@@ -166,8 +185,10 @@ public class HandSlider : MonoBehaviour
                 else {
                     counter += Time.deltaTime;
                 }
+                loadingBar.fillAmount = counter/timeAtGoal;
             }
             else {
+                circleBar.SetActive(false);
                 counter = 0;
             }
             

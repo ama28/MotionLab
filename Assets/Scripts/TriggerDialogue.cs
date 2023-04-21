@@ -17,7 +17,7 @@ public class TriggerDialogue : MonoBehaviour
     public GameManager manager;
     private Dictionary<int, int> stepToText = new Dictionary<int, int>();
     private float counter;
-    [SerializeField] private float timeTillNextStep = 5f;
+    [SerializeField] private float timeTillNextStep = 2.5f;
     private void Start()
     {
         textTriggered = false;
@@ -67,13 +67,13 @@ public class TriggerDialogue : MonoBehaviour
             //inkJSON = Resources.Load("Resources/Instructions/Text/"+tasks[currentTask]) as TextAsset;
             DialogueManager.GetInstance().EnterDialogueMode(tasks[currentTask]);
             //voiceOver.clip = Resources.Load("Resources/Instructions/Audio/Tutorial.mp3") as AudioClip;
-            //voiceOver.clip = Resources.Load("Instructions/Audio/" + tasks[currentTask].name) as AudioClip;
+            voiceOver.clip = Resources.Load("Instructions/Audio/" + tasks[currentTask].name) as AudioClip;
             print(tasks[currentTask].name);
-            //voiceOver.Play();
+            voiceOver.Play();
             animator.SetBool("Open", true);
             animator.SetBool("Close", false);
         }
-        if (textTriggered)
+        if (!voiceOver.isPlaying && textTriggered)
         {
             //StartCoroutine(CloseText());
             if (counter >= timeTillNextStep){
