@@ -42,7 +42,7 @@ public class UIButtonSummoner : MonoBehaviour
 
     public void ResetGame() {
         if (uiOut) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameObject.FindWithTag("Pipette").transform.position = new Vector3(0.021f, 0.412f, 0.068f);
         }
     }
 }
