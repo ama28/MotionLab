@@ -4934,7 +4934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1382293008
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5027,12 +5027,12 @@ GameObject:
   - component: {fileID: 1395908093}
   - component: {fileID: 1395908092}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: liquidDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1395908092
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5816,6 +5816,9 @@ MonoBehaviour:
   circleBar: {fileID: 1162399691}
   firstClick: 0
   secondClick: 0
+  liquidTube: {fileID: 0}
+  liquidDrop: {fileID: 0}
+  liquidPipette: {fileID: 0}
   voiceOver: {fileID: 0}
 --- !u!114 &1604303107
 MonoBehaviour:
@@ -5838,6 +5841,9 @@ MonoBehaviour:
   topScroll: {fileID: 1165107818}
   midScroll: {fileID: 610063356}
   botScroll: {fileID: 272705674}
+  liquidTube: {fileID: 1749711268}
+  liquidDrop: {fileID: 1395908091}
+  liquidPipette: {fileID: 1382293007}
 --- !u!1 &1640404718
 GameObject:
   m_ObjectHideFlags: 0
