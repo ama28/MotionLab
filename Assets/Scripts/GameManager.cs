@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         microDesc.SetActive(false);
         leapDesc.SetActive(false);
         pipetteDesc.SetActive(false);
-        step = 10;
+        step = 0;
         slider = FindObjectOfType<HandSlider>();
         controller = pipette.GetComponent<InteractionBehaviour>();
         progress.value = 1;
