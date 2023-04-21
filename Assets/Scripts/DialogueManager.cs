@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI dialogueText2;
-    [SerializeField] private GameObject continueIcon;
+    //[SerializeField] private GameObject continueIcon;
     private Story currentStory;
     public bool dialogueIsPlaying;
     private Coroutine displayLineCoroutine;
@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
                 dialogueText.text = currentStory.currentText;
                 dialogueText2.text = currentStory.currentText;
                 canContinueToNextLine = true;
-                continueIcon.SetActive(true);
+                //continueIcon.SetActive(true);
             }
             else
             {
@@ -98,7 +98,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText2.text = "";
 
         //Hide the continue button
-        continueIcon.SetActive(false);
+        //continueIcon.SetActive(false);
         canContinueToNextLine = false;
 
         bool isAddingRichTextTag = false;
@@ -127,7 +127,7 @@ public class DialogueManager : MonoBehaviour
                     yield return new WaitForSeconds(typingSpeed);
                 }
             }
-            continueIcon.SetActive(true);
+            //continueIcon.SetActive(true);
             canContinueToNextLine = true;
         }
         else
@@ -135,7 +135,7 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentStory.currentText;
             dialogueText2.text = currentStory.currentText;
             canContinueToNextLine = true;
-            continueIcon.SetActive(true);
+            //continueIcon.SetActive(true);
         }
         
     }
