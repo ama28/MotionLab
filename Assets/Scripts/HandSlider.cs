@@ -42,11 +42,19 @@ public class HandSlider : MonoBehaviour
     public GameObject liquidTube;
     public GameObject liquidDrop;
     public GameObject liquidPipette;
+    public float baseval;
+    public float basevalz;
+
+    public GameObject plungerImage;
+    private float OldSliderVal;
     [SerializeField] private AudioSource voiceOver;
     // Start is called before the first frame update
     void Start()
     {
+        baseval = plungerImage.transform.position.y;
+        basevalz = plungerImage.transform.position.z;
         mySlider.value = 1;
+        OldSliderVal = mySlider.value;
         volSlider.value = 1;
         volMove = false;
         sliderMove = false;
@@ -71,6 +79,11 @@ public class HandSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print("values " + baseval + mySlider.value);
+        print("values2 " + baseval );
+        print("values3 " + mySlider.value);
+        plungerImage.transform.position = new Vector3(plungerImage.transform.position.x, baseval + (mySlider.value/40), basevalz + (mySlider.value / 40));
+
         if (mySlider.value == 1 && manager.step == 21) {
             manager.step++;
             mySlider.GetComponent<CanvasGroup>().alpha = 0;
@@ -231,7 +244,6 @@ public class HandSlider : MonoBehaviour
             botVol = 0;
             counter = 0;
         }
-        
-        
+
     }
 }
