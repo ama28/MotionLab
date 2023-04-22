@@ -1,0 +1,1 @@
+Before you pipette liquid, you should place a fresh tip on the micropipette from the small tip box on the top right. We have the tip attached for you already. Make sure the tip <b>only touches the liquid</b> to avoid contamination. 

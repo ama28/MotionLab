@@ -1,1 +1,0 @@
-Located between you and the tip box is an Eppendorf tube rack that holds tubes filled with liquid. We will be pipetting this liquid later in the experiment. In the center of the table is a piece of parafilm, a waxy paper that we will pipette liquids onto. 

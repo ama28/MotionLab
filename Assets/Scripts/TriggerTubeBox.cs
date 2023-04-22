@@ -8,6 +8,7 @@ public class TriggerTubeBox : MonoBehaviour
     private HandSlider slider;
     public GameManager manager;
     public TMP_Text uiText;
+    public GameObject leftHand;
 
     void Start()
     {
@@ -15,15 +16,19 @@ public class TriggerTubeBox : MonoBehaviour
         manager = FindObjectOfType<GameManager>();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Pipette") && manager.step == 16)
+        if (other.CompareTag("Pipette") && manager.step == 12)
         {
-            slider.sliderMove = true;
-            slider.startingY = slider.leftHand.transform.position.y;
-            slider.mySlider.GetComponent<CanvasGroup>().alpha = 1;
-            manager.step++;
-            uiText.text = "Now prepare to draw up liquid by pushing the plunger to the first stop.";
+            if(leftHand.transform.position.y > 0.5){
+                slider.sliderMove = true;
+                slider.startingY = slider.leftHand.transform.position.y;
+                slider.mySlider.GetComponent<CanvasGroup>().alpha = 1;
+                manager.step++;
+                uiText.text = "Now prepare to draw up liquid by pushing the plunger to the first stop.";
+            }
+            
+            
         }
     }
 

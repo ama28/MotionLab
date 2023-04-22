@@ -1,0 +1,1 @@
+In the center of the table is a piece of waxy paper called <b>parafilm</b> that we can pipette liquids onto. 

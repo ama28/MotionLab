@@ -1,0 +1,1 @@
+On the body of the micropipette is a <b>small vertical window with three numbers</b>. These numbers, read from the top down, tell you how much volume the micropipette will take up. Right now, the P-200 micropipette is <b>set to 20 µl</b>.

@@ -1,0 +1,1 @@
+You will now see the plunger slider appear. <b>Move your left hand down until you reach the first stop</b>.

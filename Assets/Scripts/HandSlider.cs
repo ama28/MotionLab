@@ -79,12 +79,9 @@ public class HandSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("values " + baseval + mySlider.value);
-        print("values2 " + baseval );
-        print("values3 " + mySlider.value);
         plungerImage.transform.position = new Vector3(plungerImage.transform.position.x, baseval + (mySlider.value/40), basevalz + (mySlider.value / 40));
 
-        if (mySlider.value == 1 && manager.step == 21) {
+        if (mySlider.value == 1 && manager.step == 18) {
             manager.step++;
             mySlider.GetComponent<CanvasGroup>().alpha = 0;
             liquidTube.SetActive(false);
@@ -93,7 +90,7 @@ public class HandSlider : MonoBehaviour
         }
         if (mySlider.value < 0.7 && mySlider.value >= 0.55) {
             secondStopCounter = 0;
-            if (manager.step == 17){
+            if (manager.step == 14){
                 circleBar.SetActive(true);
                 if (firstStopCounter >= timeAtGoal) {
                     manager.step++;
@@ -113,7 +110,7 @@ public class HandSlider : MonoBehaviour
         }
         else if (mySlider.value >= 0 && mySlider.value < 0.2) {
             firstStopCounter = 0;
-            if (manager.step == 25){
+            if (manager.step == 24){
                 circleBar.SetActive(true);
                 if (secondStopCounter >= timeAtGoal) {
                     manager.step++;
@@ -185,7 +182,7 @@ public class HandSlider : MonoBehaviour
             volDisplacement = 1 - volSlider.value;
             //mySlider.value = 1 - sliderDisplacement + 0.15;
             //Debug.Log(mySlider.value);
-            volume = 20 + (int)(volDisplacement * 30);
+            volume = 20 + (int)(volDisplacement * 50);
             if (volume == goal) {
                 circleBar.SetActive(true);
                 if (counter >= timeAtGoal) {

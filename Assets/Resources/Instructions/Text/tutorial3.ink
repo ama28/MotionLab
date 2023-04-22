@@ -1,1 +1,0 @@
-To see the menu, open your left hand and rotate it so your palm is facing upwards. There should be a Reset button which allows you to reset the experiment by closing your hand. Rotating the hand like this also displays the current set of instructions.

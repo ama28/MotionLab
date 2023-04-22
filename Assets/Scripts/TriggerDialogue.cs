@@ -17,31 +17,28 @@ public class TriggerDialogue : MonoBehaviour
     public GameManager manager;
     private Dictionary<int, int> stepToText = new Dictionary<int, int>();
     private float counter;
-    [SerializeField] private float timeTillNextStep = 2.5f;
+    [SerializeField] private float timeTillNextStep = 0;
     private void Start()
     {
         textTriggered = false;
         currentTask = 0;
         dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
         manager = FindObjectOfType<GameManager>();
-        stepToText.Add(0, 0);
-        stepToText.Add(2, 1);
-        for (int i = 4; i < 7; i++) {
+        for (int i = 0; i < 7; i++) {
+            stepToText.Add(i, i);
+        }
+        for (int i = 9; i < 12; i++) {
             stepToText.Add(i, i-2);
         }
-        for (int i = 8; i < 11; i++) {
-            stepToText.Add(i, i-3);
+        stepToText.Add(13, 10);
+        for (int i = 15; i < 18; i++) {
+            stepToText.Add(i, i-4);
         }
-        for (int i = 13; i < 16; i++) {
+        for (int i = 19; i < 22; i++) {
             stepToText.Add(i, i-5);
         }
-        for (int i = 18; i < 21; i++) {
-            stepToText.Add(i, i-7);
-        }
-        for (int i = 22; i < 25; i++) {
-            stepToText.Add(i, i-8);
-        }
-        stepToText.Add(26, 17);
+        stepToText.Add(23, 17);
+        stepToText.Add(25, 18);
         textTriggered = false;
         counter = 0;
     }

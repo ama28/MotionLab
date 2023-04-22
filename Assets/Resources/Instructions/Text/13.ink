@@ -1,0 +1,1 @@
+Next, <b>insert the tip of the micropipette into the tube</b>.

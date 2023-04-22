@@ -1,0 +1,1 @@
+To draw up the red liquid, <b>release the plunger by slowly raising your left hand</b>. 

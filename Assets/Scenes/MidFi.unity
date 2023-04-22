@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -220,27 +220,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d703ec1895c154eb6484649179f461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 65e63bd6cae926c4695a9507da404819, type: 3}
+  inkJSON: {fileID: 4900000, guid: 3691fe47978a244459a34cab2425442c, type: 3}
   voiceOver: {fileID: 309701197}
   tasks:
-  - {fileID: 4900000, guid: 65e63bd6cae926c4695a9507da404819, type: 3}
-  - {fileID: 4900000, guid: cc3c5f2f7a3c44a4a85aee3ddfc9f975, type: 3}
-  - {fileID: 4900000, guid: 3e452ef189a73d54cb550f0ed5fc52a4, type: 3}
-  - {fileID: 4900000, guid: e33b76d44238d8741a03ef94cc15762e, type: 3}
-  - {fileID: 4900000, guid: 3400f60665b672840a4e1e372a6fcfc9, type: 3}
-  - {fileID: 4900000, guid: 74ba487a3acdae24f8c80957e44c15b2, type: 3}
-  - {fileID: 4900000, guid: 062f26491ef33374aa49cae9e8f03a44, type: 3}
-  - {fileID: 4900000, guid: 19dd86055638d934485c667bf8b03c77, type: 3}
-  - {fileID: 4900000, guid: ef21e1c84721dbb4ca9e88a712b37c40, type: 3}
-  - {fileID: 4900000, guid: 8710cb92da240ce45a504b3338528d72, type: 3}
-  - {fileID: 4900000, guid: 1b16e049a299a934a850fcf3faeffdee, type: 3}
-  - {fileID: 4900000, guid: 8234092b0c34a6c4d96b34e6f8b74249, type: 3}
-  - {fileID: 4900000, guid: 6bb12e72fb233c344b008a2852e1b091, type: 3}
-  - {fileID: 4900000, guid: ce5e194d2b8ef0e4a80c6b485d6fc8be, type: 3}
-  - {fileID: 4900000, guid: f9e2150c5c975954e9cd8c93aecc10aa, type: 3}
-  - {fileID: 4900000, guid: 278c843d666c4d54b91205badc42e284, type: 3}
-  - {fileID: 4900000, guid: 6ad610dc7fa9f76469ff62c384d4c8e6, type: 3}
-  - {fileID: 4900000, guid: d9185d0069cbeed4a9ad54eec7e56fc6, type: 3}
+  - {fileID: 4900000, guid: 3691fe47978a244459a34cab2425442c, type: 3}
+  - {fileID: 4900000, guid: f1f28e1192dd3e84692756aaaa83e4e7, type: 3}
+  - {fileID: 4900000, guid: 817881ff1f345be46adaa6e65f0624ca, type: 3}
+  - {fileID: 4900000, guid: c9f6ef0186084514e9567b38c14a4453, type: 3}
+  - {fileID: 4900000, guid: f681e2fcfdd306f4ab2528548528a5d4, type: 3}
+  - {fileID: 4900000, guid: d2c9e280a1d481c499e1c6ce62e11813, type: 3}
+  - {fileID: 4900000, guid: 1c7a1556e920aed40a4a4a4f00fcff23, type: 3}
+  - {fileID: 4900000, guid: 3e180d1459314094a9e468773814d394, type: 3}
+  - {fileID: 4900000, guid: 6d3e304f6fe24f549a6363d9cfa31aca, type: 3}
+  - {fileID: 4900000, guid: 5ceaba3259d3f7948a88d0501a4b215a, type: 3}
+  - {fileID: 4900000, guid: 670a0c1c653142b4a91eaa4ce0f85ea5, type: 3}
+  - {fileID: 4900000, guid: 11733aac69362ab41a18d033a6c7d816, type: 3}
+  - {fileID: 4900000, guid: 9538b1dc91e520b409e48f42eb7e8e91, type: 3}
+  - {fileID: 4900000, guid: 9e5e906db9e907148a11c3a8a43d50c6, type: 3}
+  - {fileID: 4900000, guid: dc6f98f1e0c43c24388abeca716369e5, type: 3}
+  - {fileID: 4900000, guid: bd5d21f119187954cad4e0306621957d, type: 3}
+  - {fileID: 4900000, guid: 411dfe562310a384b8e7a95a9536afc7, type: 3}
+  - {fileID: 4900000, guid: 2ca43f41b5a87de44bd1fdd7bc9c8ff7, type: 3}
+  - {fileID: 4900000, guid: 8be1141d7f5556e4a887047f83b4ab33, type: 3}
   currentTask: 0
   animator: {fileID: 796980417}
   manager: {fileID: 0}
@@ -993,7 +994,7 @@ MonoBehaviour:
       callback:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 412740927}
+          - m_Target: {fileID: 0}
             m_TargetAssemblyTypeName: UIButtonSummoner, Assembly-CSharp
             m_MethodName: ResetGame
             m_Mode: 1
@@ -2520,6 +2521,10 @@ PrefabInstance:
       propertyPath: uiText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4965158923538518246, guid: 90e924f829273994185d6814d59471c5, type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 1335751074}
     - target: {fileID: 4965158923538518247, guid: 90e924f829273994185d6814d59471c5, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2804,7 +2809,6 @@ GameObject:
   - component: {fileID: 412740926}
   - component: {fileID: 412740925}
   - component: {fileID: 412740924}
-  - component: {fileID: 412740927}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -2894,20 +2898,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &412740927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412740921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4b9ac5235fe61458894cbd8430c5f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiOut: 0
-  leftHandRotation: 0
 --- !u!1 &420556924
 GameObject:
   m_ObjectHideFlags: 0
@@ -3414,6 +3404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   uiText: {fileID: 0}
+  leftHand: {fileID: 1335751074}
 --- !u!1 &680436772
 GameObject:
   m_ObjectHideFlags: 0
@@ -7107,7 +7098,6 @@ GameObject:
   - component: {fileID: 1604303104}
   - component: {fileID: 1604303103}
   - component: {fileID: 1604303106}
-  - component: {fileID: 1604303107}
   m_Layer: 0
   m_Name: UICanvas
   m_TagString: Untagged
@@ -7241,31 +7231,10 @@ MonoBehaviour:
   liquidTube: {fileID: 792962631}
   liquidDrop: {fileID: 1272654537}
   liquidPipette: {fileID: 382462089}
+  baseval: 0
+  basevalz: 0
+  plungerImage: {fileID: 310708468}
   voiceOver: {fileID: 0}
---- !u!114 &1604303107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604303101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5980e4b304b1ae44ca3f0ccb7e8f45a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: 0
-  topVol: 0
-  midVol: 0
-  botVol: 0
-  volumeText: {fileID: 0}
-  scrollSpeed: 15
-  topScroll: {fileID: 1165107818}
-  midScroll: {fileID: 610063356}
-  botScroll: {fileID: 272705674}
-  liquidTube: {fileID: 0}
-  liquidDrop: {fileID: 0}
-  liquidPipette: {fileID: 0}
 --- !u!1 &1640404718
 GameObject:
   m_ObjectHideFlags: 0

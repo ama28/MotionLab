@@ -1,1 +1,0 @@
-We will now begin the experiment. Pick up the micropipette to pipette 36 µl. Dial the correct numbers to pipette 36 µl of liquid in the volume readout window. To change the numbers, slide your left hand horizontally until you reach 36 µl.

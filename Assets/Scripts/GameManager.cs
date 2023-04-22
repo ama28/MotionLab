@@ -30,12 +30,13 @@ public class GameManager : MonoBehaviour
         microDesc.SetActive(false);
         leapDesc.SetActive(false);
         pipetteDesc.SetActive(false);
-        step = 10;
+        step = 22;
         slider = FindObjectOfType<HandSlider>();
         controller = pipette.GetComponent<InteractionBehaviour>();
         progress.value = 1;
         microliterTriggered = false;
         leapTriggered = false;
+        counter = 0;
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
         progress.value = ((float)step)/25f;
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameObject.FindWithTag("Pipette").transform.position = new Vector3(0.021f, 0.412f, 0.068f);
         }
 
         if (Input.GetKeyDown("space"))
@@ -58,7 +59,11 @@ public class GameManager : MonoBehaviour
              trackerCanvas.SetActive(canvasShowing);
              line.SetActive(canvasShowing);
          } */
-         if (controller.isGrasped && step == 11) {
+         if (controller.isGrasped && step >= 4){
+            trackerCanvas.SetActive(true);
+            line.SetActive(true);
+         }
+         if (controller.isGrasped && step == 7) {
             slider.volMove = true;
             slider.startingX = slider.leftHand.transform.position.x;
             slider.volSlider.GetComponent<CanvasGroup>().alpha = 1;
@@ -71,35 +76,10 @@ public class GameManager : MonoBehaviour
             //line.SetActive(false);
          }
          if (step == 1) {
-            microDesc.SetActive(true);
-            if(!microliterTriggered){
-                microliterTriggered = true;
-                voiceOver.clip = Resources.Load("Instructions/Audio/microliter") as AudioClip;
-                voiceOver.Play();
-            }
-            if (!voiceOver.isPlaying) {
-                if (counter >= timeTillNextStep){
-                    counter = 0;
-                    step++;
-                    microDesc.SetActive(false);
-                }
-                else {
-                    counter += Time.deltaTime;
-                }
-            }
-            
-         }
-         else if (step == 3) {
             leapDesc.SetActive(true);
-            if(!leapTriggered){
-                leapTriggered = true;
-                voiceOver.clip = Resources.Load("Instructions/Audio/leap") as AudioClip;
-                voiceOver.Play();
-            }
             if (!voiceOver.isPlaying) {
-                if (counter >= timeTillNextStep){
+                if (counter >= 0){
                     counter = 0;
-                    step++;
                     leapDesc.SetActive(false);
                 }
                 else {
@@ -108,16 +88,18 @@ public class GameManager : MonoBehaviour
             }
             
          }
-        else if (step == 7) {
-            pipetteDesc.SetActive(true);
-            if (counter >= timeTillNextStep){
-                counter = 0;
-                step++;
-                pipetteDesc.SetActive(false);
-            }
-            else {
+         else if (step == 2) {
+            microDesc.SetActive(true);
+            if (!voiceOver.isPlaying) {
+                if (counter >= 0){
+                    counter = 0;
+                    microDesc.SetActive(false);
+                }
+                else {
                     counter += Time.deltaTime;
+                }
             }
-        }
+            
+         }
     }
 }
