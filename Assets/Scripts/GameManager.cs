@@ -67,8 +67,8 @@ public class GameManager : MonoBehaviour
             step++;
          }
          if (step != 11 && step != 12) {
-            trackerCanvas.SetActive(false);
-            line.SetActive(false);
+            //trackerCanvas.SetActive(false);
+            //line.SetActive(false);
          }
          if (step == 1) {
             microDesc.SetActive(true);
