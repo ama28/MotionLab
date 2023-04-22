@@ -446,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 94.8, y: -13.1}
+  m_AnchoredPosition: {x: 94.8, y: -12.57}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &120193371
@@ -2632,7 +2632,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428986829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.7}
+  m_LocalPosition: {x: 0, y: 0, z: -0.69999886}
   m_LocalScale: {x: 0.8289046, y: 0.489635, z: 0.489635}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2642,7 +2642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.2, y: -23.4}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
   m_SizeDelta: {x: 5.12, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &428986831
@@ -3114,7 +3114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3346,7 +3346,7 @@ RectTransform:
   m_GameObject: {fileID: 796980413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.37904122, y: 0.37904122, z: 0.37904122}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2012183954}
@@ -3356,7 +3356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -582.65, y: 344.7}
+  m_AnchoredPosition: {x: 15, y: 8}
   m_SizeDelta: {x: 700, y: 196.8}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &796980415
@@ -4282,7 +4282,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162399691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4293,8 +4293,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.2, y: 21.6}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 26.1, y: -5.1}
+  m_SizeDelta: {x: 10.17, y: 5.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1165107818
 GameObject:
@@ -5096,12 +5096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Here we haihfwiaeufh iww fw iufin tesitn ghtionfs fvaekrgnerkf the onluy
-    onwe rhta toirnfosnfo'ja ;inau hnrfeHere we haihfwiaeufh iww fw iufin tesitn
-    ghtionfs fvaekrgnerkf the onluy onwe rhta toirnfosnfo'ja ;inau hnrfeHere we haihfwiaeufh
-    iww fw iufin tesitn ghtionfs fvaekrgnerkf the onluy onwe rhta toirnfosnfo'ja
-    ;inau hnrHere weHere we haihfwiaeufh iww fw iufin tesitn ghtionfs fvaekrgnerkf
-    the onluy onwe rhta toirnfosnfo'ja ;inau hnrHere we
+  m_text: aerfnkjf  thus is i sdnf testing sfefes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5128,8 +5123,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6389,8 +6384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5.8233}
-  m_SizeDelta: {x: 166.9338, y: 120.3477}
+  m_AnchoredPosition: {x: -1.6834106, y: -7.0304985}
+  m_SizeDelta: {x: 61.2825, y: 69.2839}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695801723
 MonoBehaviour:
@@ -7303,12 +7298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' haihfwiaeufh iww fw iufin tesitn ghtionfs fvaekrgnerkf the onluy onwe
-    rhta toirnfosnfo''ja ;inau hnrHere we haihfwiaeufh iww fw iufin tesitn ghtionfs
-    fvaekrgnerkf the onluy onwe rhta toirnfosnfo''ja ;inau hnrHere weHere we haihfwiaeufh
-    iww fw iufin tesitn ghtionfs fvaekrgnerkf the onluy onwe rhta toirnfosnfo''ja
-    ;inau hnrHere weHere we haihfwiaeufh iww fw iufin tesitn ghtionfs fvaekrgnerkf
-    the onluy onwe rhta toirnfosnfo''ja ;inau hnrHere we'
+  m_text: aerfnkjf  thus is i sdnf testing sfefes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7335,8 +7325,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7425,7 +7415,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021885623}
   m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.7}
+  m_LocalPosition: {x: 0, y: 0, z: -0.69999886}
   m_LocalScale: {x: 1, y: 1.692903, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7434,7 +7424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.2, y: -23.4}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
   m_SizeDelta: {x: 5.12, y: 5.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021885625
