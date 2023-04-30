@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject pipette;
     public Slider progress;
     private bool canvasShowing;
-    public int step;
+    public int step = 0;
     private HandSlider slider;
     [SerializeField] private float timeTillNextStep = 2f;
     private InteractionBehaviour controller;
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
         microDesc.SetActive(false);
         leapDesc.SetActive(false);
         pipetteDesc.SetActive(false);
-        step = 0;
         slider = FindObjectOfType<HandSlider>();
         controller = pipette.GetComponent<InteractionBehaviour>();
         progress.value = 1;

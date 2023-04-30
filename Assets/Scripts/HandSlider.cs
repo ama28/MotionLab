@@ -39,6 +39,9 @@ public class HandSlider : MonoBehaviour
     public bool firstClick;
     public bool secondClick;
 
+    private bool firstStopClickPlayed = false;
+    private bool secondStopClickPlayed = false;
+
     public GameObject liquidTube;
     public GameObject liquidDrop;
     public GameObject liquidPipette;
@@ -107,6 +110,11 @@ public class HandSlider : MonoBehaviour
                 circleBar.SetActive(false);
             }
             plungerText.text = "First Stop Reached";
+            if (!firstStopClickPlayed)
+            {
+                SFXManager.S.PlaySound(0);
+                firstStopClickPlayed = true;
+            }
         }
         else if (mySlider.value >= 0 && mySlider.value < 0.2) {
             firstStopCounter = 0;
@@ -118,6 +126,7 @@ public class HandSlider : MonoBehaviour
                     mySlider.GetComponent<CanvasGroup>().alpha = 0;
                     liquidPipette.SetActive(false);
                     liquidDrop.SetActive(true);
+                    SFXManager.S.PlaySound(1);
                     volumeText.text = "You've successfully released the liquid";
                 }
                 else {
@@ -130,11 +139,18 @@ public class HandSlider : MonoBehaviour
                 circleBar.SetActive(false);
             }
             plungerText.text = "Second Stop Reached";
+            if (!secondStopClickPlayed)
+            {
+                SFXManager.S.PlaySound(0);
+                secondStopClickPlayed = true;
+            }
         }
         else {
             secondStopCounter = 0;
             firstStopCounter = 0;
             plungerText.text = "";
+            firstStopClickPlayed = false;
+            secondStopClickPlayed = false;
             circleBar.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.P)){
@@ -242,5 +258,11 @@ public class HandSlider : MonoBehaviour
             counter = 0;
         }
 
+    }
+
+    IEnumerator PlayExperimentFinish()
+    {
+        yield return new WaitForSeconds(5f);
+        SFXManager.S.PlaySound(2);
     }
 }
