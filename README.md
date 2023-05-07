@@ -1,6 +1,6 @@
 # MotionLab
  
-If you access to the application from building this project, then the steps needed to test the deliverable are as follows:\
+If you access to the application from building this project, then the steps needed to test the deliverable are as follows:
 
 1. Plug in your leap motion sensor
 2. Test to make sure that the sensor works with the UltraLeap visualizer (Ultraleap can be downloaded from the Leap Motion website, https://developer.leapmotion.com/unity)
@@ -8,7 +8,7 @@ If you access to the application from building this project, then the steps need
 4. Go through the demo
 \
 \
-Steps to continue developing this project:\
+Steps to continue developing this project:
 
 1. Fork this repo
 2. Clone the repo and open it in Unity
